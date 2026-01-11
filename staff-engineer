@@ -17,4 +17,12 @@ How to build resilient backend services?
 How to make the service scalable? 
 1. horizontal scale: add more instances or DB different regions
 2. vertical scale: add more memory to the service or DB
-3. make it light weight: neccessary logging not overbearing, centralize business logic and not littered with if statements
+3. keey things simple: neccessary logging not overbearing, centralize business logic and not littered with if statements
+4. add comprehensive monitoring: little upfront cost, but you can't improve something if not measured
+5. improve what's actually needed, not prematurely scale the system.
+6. use solid, proven tech: use battle proven tech, not neccessary newest or sexiest tech. 
+
+Examples: 
+Start simple, scale deliberately, and don't solve problems you don't have yet. This core philosophy powered Instagram from a single server to serving 1 billion users with just 6 engineers at the time of their Facebook acquisition. 
+Netflix took 7 years to fully migrate to microservices, Cortex
+Your database is almost always the first scalability bottleneck and the hardest to change later. Instagram's choice of PostgreSQL proved remarkably durable—they still use it as their primary data store today, augmented by Cassandra for specific high-write use cases
