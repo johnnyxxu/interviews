@@ -1,0 +1,14 @@
+Staff software enginneer
+
+How to build resilient backend services?
+1. set proper time out: to avoid hanging thread or indefinite access to DB
+2. have proper fallback: have fallback instances in case of main nodes failure, both services and DB
+3. have proper database distribution: deploy DB in multiple regions, backup daily
+4. use cache properly: can front load cache to ease main DB access or use it as fall back for graceful shotdown, instead of sudden death
+5. circuit breaker for downstreams: to avoid chain reaction of crashing downstream services. 
+6. have exponential retries: configure retries with exponential backoff 
+7. add proper monitoring: proactively monitor the SLA and error rate to avoid disasater situation
+8. practice chaos engineering in controlled situation: bring down downstream service 
+9. do load testing: use k6 tools to stress test the system
+10. learn from failures. 
+11. utilize queues for different async process: to ease load of main service for async process. or use it to catch 5XX scenario to replay the messages after the system is backup
