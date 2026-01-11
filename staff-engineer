@@ -12,3 +12,9 @@ How to build resilient backend services?
 9. do load testing: use k6 tools to stress test the system
 10. learn from failures. 
 11. utilize queues for different async process: to ease load of main service for async process. or use it to catch 5XX scenario to replay the messages after the system is backup
+12. add proper load balancer and rate limiter: to decouple different endpoints and better controll individually
+
+How to make the service scalable? 
+1. horizontal scale: add more instances or DB different regions
+2. vertical scale: add more memory to the service or DB
+3. make it light weight: neccessary logging not overbearing, centralize business logic and not littered with if statements
