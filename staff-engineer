@@ -13,6 +13,7 @@ How to build resilient backend services?
 10. learn from failures. 
 11. utilize queues for different async process: to ease load of main service for async process. or use it to catch 5XX scenario to replay the messages after the system is backup
 12. add proper load balancer and rate limiter: to decouple different endpoints and better controll individually
+13. promote degradation design: gracefully shutdown instead of total error out. ie show shorter feeds instead of failing entirely.
 
 How to make the service scalable? 
 1. horizontal scale: add more instances or DB different regions
